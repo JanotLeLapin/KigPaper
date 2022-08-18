@@ -1,4 +1,4 @@
-From fe9728682a21b82046cba03449b3f097e5f74627 Mon Sep 17 00:00:00 2001
+From 69a2998cd40369f7163b86cb3a3fe020639736e6 Mon Sep 17 00:00:00 2001
 From: Joseph <joseph300905@gmail.com>
 Date: Thu, 18 Aug 2022 13:17:25 +0200
 Subject: [PATCH] Setup Gradle
@@ -31,12 +31,13 @@ index edf9e5c3..adc3d74e 100644
  /manifest.mf
 diff --git a/build.gradle b/build.gradle
 new file mode 100644
-index 00000000..03dfd107
+index 00000000..135ef687
 --- /dev/null
 +++ b/build.gradle
-@@ -0,0 +1,28 @@
+@@ -0,0 +1,36 @@
 +plugins {
 +    id 'maven-publish'
++    id 'java-library'
 +}
 +
 +repositories {
@@ -44,8 +45,15 @@ index 00000000..03dfd107
 +}
 +
 +dependencies {
-+    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
-+    implementation 'com.google.code.gson:gson:2.2.4'
++    api 'com.googlecode.json-simple:json-simple:1.1.1'
++    api 'com.google.code.gson:gson:2.2.4'
++
++    api 'commons-lang:commons-lang:2.6'
++    api 'com.google.guava:guava:31.1-jre'
++    api 'org.avaje:ebean:2.8.1'
++    api 'org.yaml:snakeyaml:1.30'
++    api 'net.md-5:bungeecord-chat:1.8-SNAPSHOT'
++
 +    testImplementation 'junit:junit:4.13.2'
 +    testImplementation 'org.hamcrest:hamcrest-library:1.3'
 +    compileOnly 'net.sf.trove4j:trove4j:3.0.3'
