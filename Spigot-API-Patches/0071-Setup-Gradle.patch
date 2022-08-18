@@ -1,4 +1,4 @@
-From e2baee40210f0f1ef5ec7c2dbf8bcd95923b0c94 Mon Sep 17 00:00:00 2001
+From fe9728682a21b82046cba03449b3f097e5f74627 Mon Sep 17 00:00:00 2001
 From: Joseph <joseph300905@gmail.com>
 Date: Thu, 18 Aug 2022 13:17:25 +0200
 Subject: [PATCH] Setup Gradle
@@ -31,10 +31,14 @@ index edf9e5c3..adc3d74e 100644
  /manifest.mf
 diff --git a/build.gradle b/build.gradle
 new file mode 100644
-index 00000000..4a2b1de2
+index 00000000..03dfd107
 --- /dev/null
 +++ b/build.gradle
-@@ -0,0 +1,12 @@
+@@ -0,0 +1,28 @@
++plugins {
++    id 'maven-publish'
++}
++
 +repositories {
 +    maven { url = 'https://hub.spigotmc.org/nexus/content/groups/public/' }
 +}
@@ -45,6 +49,18 @@ index 00000000..4a2b1de2
 +    testImplementation 'junit:junit:4.13.2'
 +    testImplementation 'org.hamcrest:hamcrest-library:1.3'
 +    compileOnly 'net.sf.trove4j:trove4j:3.0.3'
++}
++
++publishing {
++    publications {
++        maven(MavenPublication) {
++            groupId = 'org.github.paperspigot'
++            artifactId = 'paperspigot-api'
++            version = 'dev-SNAPSHOT'
++
++            from components.java
++        }
++    }
 +}
 +
 diff --git a/pom.xml b/pom.xml
