@@ -1,0 +1,10 @@
+rootProject.name = 'paperspigot'
+
+['API', 'Server'].each { v ->
+    def path = """PaperSpigot-$v"""
+    def name = path.toLowerCase()
+
+    include name
+    project(""":$name""").projectDir = file(path)
+}
+
