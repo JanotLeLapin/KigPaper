@@ -1,4 +1,4 @@
-From 824799b11013b22120cecf8cf2d97169aa3e2534 Mon Sep 17 00:00:00 2001
+From a9522a2cb50ec837cfaf75c6d5799737efa89cb2 Mon Sep 17 00:00:00 2001
 From: Joseph <joseph300905@gmail.com>
 Date: Thu, 18 Aug 2022 13:22:24 +0200
 Subject: [PATCH] Setup Gradle
@@ -26,10 +26,10 @@ index 73c16b1d5..d74ee7e9d 100644
  .*.sw[a-p]
 diff --git a/build.gradle b/build.gradle
 new file mode 100644
-index 000000000..fb9da96a4
+index 000000000..ae7b3078b
 --- /dev/null
 +++ b/build.gradle
-@@ -0,0 +1,39 @@
+@@ -0,0 +1,55 @@
 +plugins {
 +    id 'application'
 +    id 'com.github.johnrengelman.shadow' version '7.1.2'
@@ -67,6 +67,22 @@ index 000000000..fb9da96a4
 +
 +application {
 +    mainClass = 'org.bukkit.craftbukkit.Main'
++}
++
++shadowJar {
++    [
++        'joptsimple',
++        'jline',
++        'org.ibex',
++        'org.gjt',
++    ].each { lib ->
++        relocate lib, """org.bukkit.craftbukkit.libs.$lib"""
++    }
++
++    relocate('org.bukkit.craftbukkit', 'org.bukkit.craftbukkit.v1_8_R3') {
++        exclude 'org.bukkit.craftbukkit.Main*'
++    }
++    relocate 'net.minecraft.server', 'net.minecraft.server.v1_8_R3'
 +}
 +
 diff --git a/pom.xml b/pom.xml
