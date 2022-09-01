@@ -1,4 +1,4 @@
-From 69a2998cd40369f7163b86cb3a3fe020639736e6 Mon Sep 17 00:00:00 2001
+From c083bbf5f2e0e24a241fca95bb553fa49c4e35cd Mon Sep 17 00:00:00 2001
 From: Joseph <joseph300905@gmail.com>
 Date: Thu, 18 Aug 2022 13:17:25 +0200
 Subject: [PATCH] Setup Gradle
@@ -31,7 +31,7 @@ index edf9e5c3..adc3d74e 100644
  /manifest.mf
 diff --git a/build.gradle b/build.gradle
 new file mode 100644
-index 00000000..135ef687
+index 00000000..260d1157
 --- /dev/null
 +++ b/build.gradle
 @@ -0,0 +1,36 @@
@@ -49,7 +49,7 @@ index 00000000..135ef687
 +    api 'com.google.code.gson:gson:2.2.4'
 +
 +    api 'commons-lang:commons-lang:2.6'
-+    api 'com.google.guava:guava:31.1-jre'
++    api 'com.google.guava:guava:17.0'
 +    api 'org.avaje:ebean:2.8.1'
 +    api 'org.yaml:snakeyaml:1.30'
 +    api 'net.md-5:bungeecord-chat:1.8-SNAPSHOT'

@@ -1,4 +1,4 @@
-From a9522a2cb50ec837cfaf75c6d5799737efa89cb2 Mon Sep 17 00:00:00 2001
+From ec882755ddda846a9bcee55e5add1d7fa1e9a655 Mon Sep 17 00:00:00 2001
 From: Joseph <joseph300905@gmail.com>
 Date: Thu, 18 Aug 2022 13:22:24 +0200
 Subject: [PATCH] Setup Gradle
@@ -26,7 +26,7 @@ index 73c16b1d5..d74ee7e9d 100644
  .*.sw[a-p]
 diff --git a/build.gradle b/build.gradle
 new file mode 100644
-index 000000000..ae7b3078b
+index 000000000..9454e05c7
 --- /dev/null
 +++ b/build.gradle
 @@ -0,0 +1,55 @@
@@ -55,7 +55,7 @@ index 000000000..ae7b3078b
 +    implementation 'org.apache.logging.log4j:log4j-core:2.17.1'
 +
 +    implementation 'commons-lang:commons-lang:2.6'
-+    implementation 'com.google.guava:guava:31.1-jre'
++    implementation 'com.google.guava:guava:17.0'
 +    implementation 'org.avaje:ebean:2.8.1'
 +    implementation 'org.yaml:snakeyaml:1.30'
 +    implementation 'net.md-5:bungeecord-chat:1.8-SNAPSHOT'
