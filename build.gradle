@@ -8,7 +8,7 @@ subprojects {
     java {
         toolchain {
             languageVersion = JavaLanguageVersion.of(8)
-            vendor = JvmVendorSpec.ORACLE
+            // vendor = JvmVendorSpec.ORACLE
         }
     }
 
